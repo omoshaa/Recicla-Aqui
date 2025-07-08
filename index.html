@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recicla Aqui - Automação e Educação para Reciclagem</title>
+  <meta name="description" content="Projeto Recicla Aqui: unindo automação, IA e gamificação para revolucionar a reciclagem no Brasil e promover a educação ambiental." />
+  <meta name="keywords" content="reciclagem, sustentabilidade, sensores, Arduino, IA, educação ambiental, lixo, gamificação, meio ambiente, coleta seletiva, Campinas, ABRELPE, DMLU" />
+  <meta name="author" content="Moisés Felipi" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/744/744922.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/744/744922.png" type="image/png" sizes="16x16" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+  <header>
+    <h1 id="topo">Recicla Aqui</h1>
+    <p>Automatizar a reciclagem para que cuidar do planeta seja tão fácil e recompensador quanto jogar um game.</p>
+  </header>
+
+  <nav aria-label="Menu principal">
+    <a href="#problema">Problema</a>
+    <a href="#solucao">Solução</a>
+    <a href="#projeto-detalhado">O Projeto</a>
+    <a href="#como-funciona">Como Funciona</a>
+    <a href="#reciclagem-info">O que é Reciclagem</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main id="conteudo" tabindex="-1">
+    <section id="problema" aria-labelledby="h2-problema">
+      <h2 id="h2-problema">O Problema da Reciclagem no Brasil</h2>
+      <p>O Brasil recicla apenas 4% do seu lixo, segundo a Abrelpe (2023). Mesmo com produção de quase 64 milhões de toneladas por ano, o país ainda carece de infraestrutura eficiente para lidar com seus resíduos.</p>
+      <p>A carência se manifesta na falta de infraestrutura automatizada, no baixo engajamento popular por desconhecimento ou desincentivo, e na triagem manual, que é lenta e custosa.</p>
+      <p><strong>Fonte:</strong> <a href="https://agenciabrasil.ebc.com.br/geral/noticia/2022-06/indice-de-reciclagem-no-brasil-e-de-4-diz-abrelpe" target="_blank" rel="noopener noreferrer">Agência Brasil - Abrelpe, 2022</a></p>
+    </section>
+
+    <section id="solucao" aria-labelledby="h2-solucao">
+      <h2 id="h2-solucao">Nossa Solução: Reciclagem Inteligente</h2>
+      <p>Desenvolvemos um sistema automatizado com sensores e inteligência artificial para separar resíduos, aliado a um aplicativo gamificado com QR Codes e recompensas educativas. Nosso objetivo é estimular a cultura da reciclagem e facilitar a triagem para todos.</p>
+    </section>
+
+    <section id="projeto-detalhado" aria-labelledby="h2-projeto-detalhado">
+      <h2 id="h2-projeto-detalhado">O Projeto em Detalhes: Recicla Aqui</h2>
+
+      <article>
+        <h3>Resumo da Proposta</h3>
+        <p>O Recicla Aqui busca revolucionar a reciclagem no Brasil através de um sistema automatizado que combina sensores inteligentes, visão computacional e gamificação para identificar, classificar e separar resíduos com máxima eficiência. Nossa solução abrange:</p>
+        <ul>
+          <li><strong>Prototipagem de ponta:</strong> Utilizamos Arduino com sensores de peso, cor, condutividade e, futuramente, espectroscopia NIR para plásticos, garantindo precisão na identificação dos materiais.</li>
+          <li><strong>Inteligência Artificial:</strong> Implementamos algoritmos de IA (inicialmente baseados em regras, com planos de evolução para redes neurais) para uma triagem cada vez mais precisa e autônoma.</li>
+          <li><strong>Aplicativo Interativo:</strong> Um app completo com:
+            <ul>
+              <li><strong>Dashboard em tempo real:</strong> Monitore os quilos reciclados, a economia de CO₂ e a água poupada, visualizando o impacto direto de suas ações.</li>
+              <li><strong>Gamificação envolvente:</strong> Participe de rankings, missões e aproveite parcerias com estabelecimentos para trocar seus pontos por benefícios exclusivos.</li>
+              <li><strong>Educação ambiental:</strong> Aprenda e se divirta com jogos, tutoriais e a integração com escolas, tornando a sustentabilidade acessível e divertida para todos.</li>
+            </ul>
+          </li>
+          <li><strong>Sustentabilidade no Core:</strong> Nossos protótipos são feitos com materiais reciclados, e os módulos são projetados para serem escaláveis, adaptando-se a diversos cenários como escolas, eventos e grandes centrais de triagem.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Por Que Campinas? Nossa Justificativa</h3>
+        <p>Campinas, um polo tecnológico que gera cerca de 1,2 mil toneladas de lixo por dia (DMLU, 2024), é o cenário ideal para testar e refinar nossa solução. Nossa escolha estratégica visa:</p>
+        <ul>
+          <li><strong>Ambiente de Teste Ideal:</strong> Realizar a implementação e validação em escolas, universidades e eventos sustentáveis da região, como a renomada Virada Ambiental.</li>
+          <li><strong>Otimização de Custos:</strong> Promover a redução significativa dos custos de coleta seletiva através da automação do processo.</li>
+          <li><strong>Geração de Dados Estratégicos:</strong> Fornecer dados valiosos para o desenvolvimento de políticas públicas eficazes, como a criação de mapas de geração de resíduos por bairro, auxiliando na gestão urbana.</li>
+        </ul>
+        <p><strong>Fonte:</strong> <a href="https://www.campinas.sp.gov.br/noticias-integra.php?id=51656" target="_blank" rel="noopener noreferrer">DMLU Campinas, 2024</a></p>
+      </article>
+
+      <article>
+        <h3>Objetivos Específicos do Projeto</h3>
+        <p>Para alcançar nossa visão de um futuro mais sustentável, definimos os seguintes objetivos:</p>
+        <ol>
+          <li><strong>Desenvolvimento de Protótipo Low-Cost:</strong> Criar um protótipo inicial utilizando Arduino e sensores acessíveis (LDR, ultrassônico) capazes de separar materiais básicos como plástico, metal e papel, com foco na eficiência e baixo custo.</li>
+          <li><strong>Implementação de Visão Computacional:</strong> Integrar OpenCV e TensorFlow Lite para uma classificação complementar de alta precisão dos resíduos, aprimorando a capacidade de triagem do sistema.</li>
+          <li><strong>Criação do Aplicativo Gamificado:</strong> Desenvolver um aplicativo com recompensas simbólicas (como pontos trocáveis por cursos de sustentabilidade ou descontos em parceiros) e integração com QR Codes nos coletores públicos, facilitando o descarte correto e o engajamento do usuário.</li>
+          <li><strong>Fomento à Educação Ambiental:</strong> Produzir kits didáticos para escolas (combinando oficinas de robótica e reciclagem) e instalar estações interativas em eventos, mostrando dados em tempo real do impacto coletivo, para conscientizar e envolver a comunidade.</li>
+          <li><strong>Garantia de Escalabilidade:</strong> Adotar um modelo open-source (com código disponível no GitHub) e buscar parcerias estratégicas com empresas ESG para financiamento e expansão do projeto, garantindo sua longevidade e impacto em larga escala.</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>Nossos Diferenciais</h3>
+        <ul>
+          <li>✔ <strong>Tecnologia Acessível:</strong> Nosso custo é cerca de 30% menor que o de concorrentes, graças ao uso de hardware aberto e inovação em otimização de recursos.</li>
+          <li>✔ <strong>Impacto Mensurável:</strong> Oferecemos relatórios personalizados para prefeituras e empresas, demonstrando o impacto real e quantificável das ações de reciclagem.</li>
+          <li>✔ <strong>Engajamento Comunitário:</strong> Fomentamos a participação ativa com competições entre bairros via aplicativo, transformando a reciclagem em uma atividade coletiva, divertida e recompensadora.</li>
+        </ul>
+      </article>
+      <a href="#contato" class="cta-button">Participe do Recicla Aqui!</a>
+    </section>
+
+    ---
+
+    <section id="como-funciona" aria-labelledby="h2-como">
+      <h2 id="h2-como">Como Funciona</h2>
+      <p>Nosso sistema inteligente de reciclagem opera em etapas eficientes:</p>
+      <p>🔍 Sensores de peso, cor e condutividade (Arduino) detectam os materiais.</p>
+      <p>🤖 Visão computacional com IA (OpenCV) identifica e classifica os resíduos.</p>
+      <p>📱 O descarte correto gera um QR Code escaneável que soma pontos no app.</p>
+      <div style="text-align: center; margin-top: 2rem;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SUA_VIDEO_DO_PROTOTIPO" title="Demonstração do Protótipo Recicla Aqui" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p style="margin-top: 1rem; font-style: italic;">Assista a uma demonstração do nosso protótipo em ação!</p>
+      </div>
+    </section>
+
+    ---
+
+    <section id="reciclagem-info" aria-labelledby="h2-reciclagem-info">
+      <h2 id="h2-reciclagem-info">Tudo sobre Reciclagem</h2>
+      <article>
+        <h3>Resumo sobre reciclagem</h3>
+        <p>Reciclagem é o ato ou processo de transformar um produto que seria descartado em outros produtos ou matérias-primas. Sua principal função é o reaproveitamento de materiais, evitando desperdícios e reduzindo o volume de resíduos sólidos acumulados em aterros e lixões.</p>
+        <p>A reciclagem pode ser mecânica, química ou energética. Essa prática é importante para a manutenção de um espaço urbano limpo, para a preservação do meio ambiente e para a economia local.</p>
+      </article>
+
+      <article>
+        <h3>O que é reciclagem?</h3>
+        <p>Reciclagem é o ato ou processo de reaproveitar determinados produtos ou partes de objetos que seriam descartados, transformando-os em novos produtos. A reciclagem envolve etapas que modificam a estrutura física ou química do material original, diferente da reutilização, onde o objeto mantém sua estrutura original.</p>
+      </article>
+
+      <article>
+        <h3>Qual a função da reciclagem?</h3>
+        <p>A principal função é reaproveitar materiais para estender sua vida útil e reduzir desperdícios, diminuindo o volume de lixo destinado a aterros, solos, mananciais e oceanos.</p>
+      </article>
+
+      <article>
+        <h3>Tipos de reciclagem</h3>
+        <ul>
+          <li><strong>Reciclagem mecânica:</strong> transformação física do material (ex: moagem, lavagem).</li>
+          <li><strong>Reciclagem química:</strong> alteração da estrutura química (ex: conversão de polímeros em monômeros).</li>
+          <li><strong>Reciclagem energética:</strong> queima do material para geração de energia.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Importância da reciclagem</h3>
+        <p>Reciclar ajuda a conservar o meio ambiente, reduzir o lixo em aterros, gerar empregos formais e informais, e diminuir o consumo de produtos novos.</p>
+      </article>
+
+      <article>
+        <h3>Como reciclar?</h3>
+        <p>Separe seu lixo doméstico por tipo (plástico, vidro, papel, metal e orgânico). Atenção: papéis engordurados, guardanapos usados e bitucas de cigarro não são recicláveis. Restos orgânicos podem ser compostados.</p>
+      </article>
+
+      <article>
+        <h3>Coleta seletiva</h3>
+        <p>Prática de separar os resíduos sólidos recicláveis por cor e tipo para dar destino correto. É o primeiro passo para a reciclagem.</p>
+      </article>
+
+      <article>
+        <h3>Cores da reciclagem no Brasil</h3>
+        <div class="table-container">
+          <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; margin-bottom: 1rem;">
+            <thead>
+              <tr style="background:#00ff88; color:#121212;">
+                <th>Cor</th>
+                <th>Tipo de material</th>
+                <th>São recicláveis</th>
+                <th>Não são recicláveis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Verde</strong></td>
+                <td>Vidro</td>
+                <td>Garrafas, potes, frascos limpos</td>
+                <td>Vidros temperados, espelhos, lâmpadas, louças</td>
+              </tr>
+              <tr>
+                <td><strong>Vermelho</strong></td>
+                <td>Plástico</td>
+                <td>Garrafas PET, embalagens, sacolas</td>
+                <td>Isopor, espumas, acrílico, cabos de panela</td>
+              </tr>
+              <tr>
+                <td><strong>Amarelo</strong></td>
+                <td>Metal</td>
+                <td>Latas, papel-alumínio limpo, tampas</td>
+                <td>Latas de tinta, esponjas de aço, clipes</td>
+              </tr>
+              <tr>
+                <td><strong>Azul</strong></td>
+                <td>Papel</td>
+                <td>Jornais, revistas, papelão limpo</td>
+                <td>Papéis engordurados, guardanapos, fotos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article>
+        <h3>Reciclagem no Brasil</h3>
+        <p>Apenas 4% dos resíduos recicláveis são efetivamente reciclados no Brasil (Abrelpe, 2022). O Plano Nacional de Resíduos Sólidos (Planares) prevê aumento para 48% até 2040.</p>
+        <p><strong>Fonte:</strong> <a href="https://www.gov.br/mma/pt-br/assuntos/agendaambientalurbana/lixao-zero/plano_nacional_de_residuos_solidos-1.pdf" target="_blank" rel="noopener noreferrer">Plano Nacional de Resíduos Sólidos (Planares), 2022</a></p>
+      </article>
+
+      <article>
+        <h3>História da reciclagem</h3>
+        <p>A reciclagem tem raízes antigas, desde Atenas na Grécia Antiga, passando por processos no Japão em 1031, até a industrialização e guerras mundiais, onde foi essencial para a economia e o ambiente.</p>
+        <p>O símbolo universal da reciclagem foi criado por Gary Anderson, baseado na ideia de reduzir, reutilizar e reciclar.</p>
+      </article>
+
+      <article>
+        <h3>Fontes e créditos</h3>
+        <ul>
+          <li><a href="https://brasilescola.uol.com.br/biologia/reciclagem.htm" target="_blank" rel="noopener noreferrer">Brasil Escola - Reciclagem</a></li>
+          <li><a href="https://agenciabrasil.ebc.com.br/geral/noticia/2022-06/indice-de-reciclagem-no-brasil-e-de-4-diz-abrelpe" target="_blank" rel="noopener noreferrer">Agência Brasil - Abrelpe</a></li>
+          <li><a href="https://www.gov.br/mma/pt-br/assuntos/agendaambientalurbana/lixao-zero/plano_nacional_de_residuos_solidos-1.pdf" target="_blank" rel="noopener noreferrer">Plano Nacional de Resíduos Sólidos (Planares)</a></li>
+          <li><a href="https://www.uol.com.br/ecoa/colunas/mara-gama/2022/04/28/meta-de-reciclagem-e-incineracao-no-brasil.htm" target="_blank" rel="noopener noreferrer">Ecoa - Meta de reciclagem e incineração</a></li>
+          <li><a href="https://www.hintonswaste.co.uk/news/history-of-recycling-timeline/" target="_blank" rel="noopener noreferrer">Hintons - História da Reciclagem</a></li>
+        </ul>
+      </article>
+    </section>
+
+    ---
+
+    <section id="equipe" aria-labelledby="h2-equipe">
+      <h2 id="h2-equipe">Nossa Equipe</h2>
+      <p>O Recicla Aqui é um projeto desenvolvido com paixão e dedicação para o Desafio Liga Jovem, por uma equipe de estudantes do **[Nome da Sua Instituição de Ensino]**, sob a orientação do Professor **[Nome Completo do Professor Orientador]**.</p>
+      <p>Conheça os integrantes da nossa equipe:</p>
+      <ul>
+        <li> Moisés Filipe - Desenvolvedor Full-Stack</li>
+        <li>**[Nome do Estudante 2]** - [Função ou Área de Atuação no Projeto]</li>
+        </ul>
+      <p>Estamos comprometidos em ser agentes de mudança, buscando soluções criativas para problemas reais e gerando um impacto positivo em nossa comunidade.</p>
+      <a href="[LINK_DO_SEU_PROJETO_NO_SITE_LIGA_JOVEM]" target="_blank" rel="noopener noreferrer" class="cta-button">Conheça nosso projeto no Desafio Liga Jovem!</a>
+    </section>
+    
+
+    <section id="contato" aria-labelledby="h2-contato">
+      <h2 id="h2-contato">Entre em Contato Conosco</h2>
+      <p>Quer saber mais ou participar dessa iniciativa transformadora? Envie uma mensagem!</p>
+      <form id="form-contato" aria-label="Formulário de contato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required aria-required="true" autocomplete="name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" />
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required aria-required="true"></textarea>
+
+        <button type="submit" class="cta-button">Enviar Mensagem</button>
+      </form>
+      <div id="form-status" role="status" aria-live="polite" style="margin-top: 1rem; color: var(--cor-primaria);"></div>
+    </section>
+  </main>
+
+  <a href="#topo" class="back-to-top" aria-label="Voltar ao topo">Topo ↑</a>
+  <button id="toggle-theme" aria-pressed="false" aria-label="Alternar modo claro e escuro">Modo Claro</button>
+  <button id="share-btn" aria-label="Compartilhar site">Compartilhar</button>
+
+  <footer>
+    <p>© 2025 Recicla Aqui - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
