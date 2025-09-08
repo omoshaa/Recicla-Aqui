@@ -1,265 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoTech - Automação e Educação para Reciclagem</title>
-    <meta name="description" content="Projeto EcoTech: unindo automação, IA e gamificação para revolucionar a reciclagem no Brasil e promover a educação ambiental." />
-    <meta name="keywords" content="reciclagem, sustentabilidade, sensores, Arduino, IA, educação ambiental, lixo, gamificação, meio ambiente, coleta seletiva, Campinas, ABRELPE, DMLU" />
-    <meta name="author" content="Moisés Filipe" />
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/744/744922.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/744/744922.png" type="image/png" sizes="16x16" />
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.seusite.com.br/ecotech">
-    <meta property="og:title" content="EcoTech - Automatizando a Reciclagem no Brasil">
-    <meta property="og:description" content="Projeto EcoTech: unindo automação, IA e gamificação para revolucionar a reciclagem no Brasil e promover a educação ambiental.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/00ff88/f5f5f5?text=EcoTech+Social">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.seusite.com.br/ecotech">
-    <meta property="twitter:title" content="EcoTech - Automatizando a Reciclagem no Brasil">
-    <meta property="twitter:description" content="Projeto EcoTech: unindo automação, IA e gamificação para revolucionar a reciclagem no Brasil e promover a educação ambiental.">
-    <meta property="twitter:image" content="https://via.placeholder.com/800x418/00ff88/f5f5f5?text=EcoTech+Twitter">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tardígrados | Mapeamento</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/tardigrade-icon.png">
 </head>
+
 <body>
-    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/tardigrade-icon.png" alt="Tardígrado Logo" class="logo-img">
+      <span>PUNE</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">Sobre</a>
+      <a href="#map-section">Mapa</a>
+      <a href="#register">Cadastrar</a>
+    </div>
+  </nav>
 
-    <header>
-        <div class="header-content">
-            <h1 id="topo">EcoTech</h1>
-            <p>Automatizar a reciclagem para que cuidar do planeta seja tão fácil e recompensador quanto jogar um game.</p>
+  <section id="about">
+    <h2>Sobre os Tardígrados</h2>
+    <div class="about-content">
+      <img src="assets/tardigrade-photo.jpg" alt="Tardígrado" class="about-image">
+      <div class="about-text">
+        <p>Tardígrados, também conhecidos como ursos d'água, são pequenos animais microscópicos extremamente
+          resistentes.
+          Podem sobreviver em condições extremas, incluindo:</p>
+        <ul>
+          <li>Temperaturas próximas ao zero absoluto</li>
+          <li>Temperaturas acima de 150°C</li>
+          <li>Pressões extremas</li>
+          <li>Radiação espacial</li>
+          <li>Décadas sem água (criptobiose)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="map-section">
+    <h2>Mapa de Ocorrências</h2>
+    <div class="stats-container">
+      <div class="stat-box">
+        <span id="total-registros">0</span>
+        <p>Registros</p>
+      </div>
+      <div class="stat-box">
+        <span id="total-generos">0</span>
+        <p>Gêneros</p>
+      </div>
+    </div>
+    <div id="map"></div>
+  </section>
+
+  <section id="register">
+    <h2>Novo Registro</h2>
+    <form id="form">
+      <div class="form-group">
+        <div class="coordinates-container">
+          <input type="number" id="latitude" placeholder="Latitude" step="any" required>
+          <input type="number" id="longitude" placeholder="Longitude" step="any" required>
+          <button type="button" id="getLocation" title="Usar localização atual">
+            <i class="fas fa-location-crosshairs"></i>
+          </button>
         </div>
-    </header>
+        <small>Clique no mapa ou use sua localização atual</small>
+      </div>
 
-    <nav aria-label="Menu principal">
-        <a href="#problema">Problema</a>
-        <a href="#solucao">Solução</a>
-        <a href="#projeto-detalhado">O Projeto</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#reciclagem-info">Reciclagem</a>
-        <a href="#equipe">Equipe</a>
-        <a href="#contato">Contato</a>
-    </nav>
+      <div class="form-group">
+        <input type="text" id="genero" placeholder="Gênero" required>
+        <input type="number" id="quantidade" placeholder="Quantidade" required>
+        <input type="number" id="raio" placeholder="Raio do ambiente (m)" required>
+      </div>
 
-    <main id="conteudo" tabindex="-1">
-        <!-- Problema -->
-        <section id="problema" aria-labelledby="h2-problema" class="content-section">
-            <h2 id="h2-problema">O Problema da Reciclagem no Brasil</h2>
-            <p>O Brasil recicla apenas 4% do seu lixo, segundo a Abrelpe (2023). Mesmo com produção de quase 64 milhões de toneladas por ano, o país ainda carece de infraestrutura eficiente para lidar com seus resíduos.</p>
-            <p>A carência se manifesta na falta de infraestrutura automatizada, no baixo engajamento popular por desconhecimento ou desincentivo, e na triagem manual, que é lenta e custosa.</p>
-            <p class="source-text"><strong>Fonte:</strong> <a href="https://agenciabrasil.ebc.com.br/geral/noticia/2022-06/indice-de-reciclagem-no-brasil-e-de-4-diz-abrelpe" target="_blank" rel="noopener noreferrer">Agência Brasil - Abrelpe, 2022</a></p>
-        </section>
+      <div class="form-group">
+        <input type="text" id="localidade" placeholder="Nome da localidade" required>
+        <input type="text" id="pesquisador" placeholder="Nome do pesquisador" required>
+      </div>
 
-        <!-- Solução -->
-        <section id="solucao" aria-labelledby="h2-solucao" class="content-section">
-            <h2 id="h2-solucao">Nossa Solução: Reciclagem Inteligente</h2>
-            <p>Desenvolvemos um sistema automatizado com sensores e inteligência artificial para separar resíduos, aliado a um aplicativo gamificado com QR Codes e recompensas educativas. Nosso objetivo é estimular a cultura da reciclagem e facilitar a triagem para todos.</p>
-        </section>
+      <div class="form-group">
+        <textarea id="observacoes" placeholder="Observações"></textarea>
+      </div>
 
-        <!-- Projeto Detalhado -->
-        <section id="projeto-detalhado" aria-labelledby="h2-projeto-detalhado" class="content-section">
-            <h2 id="h2-projeto-detalhado">O Projeto em Detalhes: EcoTech</h2>
+      <div class="form-group">
+        <div class="file-upload">
+          <label for="foto">
+            <i class="fas fa-camera"></i>
+            <span>Escolher foto</span>
+          </label>
+          <input type="file" id="foto" accept="image/*" required>
+        </div>
+        <div id="image-preview"></div>
+      </div>
 
-            <article class="project-article">
-                <h3>Resumo da Proposta</h3>
-                <p>O EcoTech busca revolucionar a reciclagem no Brasil através de um sistema automatizado que combina sensores inteligentes, visão computacional e gamificação para identificar, classificar e separar resíduos com máxima eficiência. Nossa solução abrange:</p>
-                <ul>
-                    <li><strong>Prototipagem de ponta:</strong> Utilizamos Arduino com sensores de peso, cor, condutividade e, futuramente, espectroscopia NIR para plásticos, garantindo precisão na identificação dos materiais.</li>
-                    <li><strong>Inteligência Artificial:</strong> Implementamos algoritmos de IA para triagem cada vez mais precisa e autônoma.</li>
-                    <li><strong>Aplicativo Interativo:</strong> Um app completo com dashboard em tempo real, gamificação envolvente e educação ambiental.</li>
-                    <li><strong>Sustentabilidade no Core:</strong> Protótipos feitos com materiais reciclados e módulos escaláveis.</li>
-                </ul>
-            </article>
+      <button type="submit">
+        <i class="fas fa-save"></i>
+        Salvar Registro
+      </button>
+    </form>
+  </section>
 
-            <article class="project-article">
-                <h3>Por Que Campinas?</h3>
-                <p>Campinas, com cerca de 1,2 mil toneladas de lixo por dia (DMLU, 2024), é o cenário ideal para testar e refinar nossa solução. Nossa escolha estratégica visa:</p>
-                <ul>
-                    <li>Ambiente de teste ideal em escolas, universidades e eventos sustentáveis.</li>
-                    <li>Otimização de custos na coleta seletiva via automação.</li>
-                    <li>Geração de dados estratégicos para políticas públicas.</li>
-                </ul>
-                <p class="source-text"><strong>Fonte:</strong> <a href="https://www.campinas.sp.gov.br/noticias-integra.php?id=51656" target="_blank" rel="noopener noreferrer">DMLU Campinas, 2024</a></p>
-            </article>
+  <footer>
+    <p>© 2025 Projeto Tardígrados - Mapeamento Científico</p>
+  </footer>
 
-            <article class="project-article">
-                <h3>Objetivos Específicos</h3>
-                <ol>
-                    <li>Desenvolver protótipo low-cost com Arduino e sensores acessíveis.</li>
-                    <li>Implementar visão computacional para classificação de resíduos.</li>
-                    <li>Criar aplicativo gamificado com QR Codes e recompensas educativas.</li>
-                    <li>Promover educação ambiental com kits didáticos e estações interativas.</li>
-                    <li>Garantir escalabilidade com modelo open-source e parcerias estratégicas.</li>
-                </ol>
-            </article>
+  <div id="notification"></div>
 
-            <article class="project-article">
-                <h3>Diferenciais</h3>
-                <ul class="differences-list">
-                    <li>✔ Tecnologia acessível com custo 30% menor que concorrentes.</li>
-                    <li>✔ Impacto mensurável com relatórios para prefeituras e empresas.</li>
-                    <li>✔ Engajamento comunitário via rankings e desafios no app.</li>
-                </ul>
-            </article>
-
-            <a href="#contato" class="cta-button primary-button">Participe do EcoTech!</a>
-        </section>
-
-        <!-- Como Funciona -->
-        <section id="como-funciona" aria-labelledby="h2-como" class="content-section">
-            <h2 id="h2-como">Como Funciona</h2>
-            <div class="how-it-works-grid">
-                <div class="step-item">🔍 Sensores de peso, cor e condutividade detectam os materiais.</div>
-                <div class="step-item">🤖 Visão computacional com IA identifica e classifica os resíduos.</div>
-                <div class="step-item">📱 O descarte correto gera QR Code que soma pontos no app.</div>
-            </div>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?si=YOUR_VIDEO_EMBED_PARAMETERS" title="Demonstração do Protótipo EcoTech" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p class="video-caption">Assista a demonstração do protótipo em ação!</p>
-            </div>
-        </section>
-
-        <!-- Reciclagem -->
-        <section id="reciclagem-info" aria-labelledby="h2-reciclagem-info" class="content-section">
-            <h2 id="h2-reciclagem-info">Tudo sobre Reciclagem</h2>
-
-            <article class="info-article">
-                <h3>O que é Reciclagem?</h3>
-                <p>Reciclagem é o processo de transformar materiais que seriam descartados em novos produtos ou matérias-primas. O objetivo é reduzir o desperdício e diminuir o impacto ambiental.</p>
-            </article>
-
-            <article class="info-article">
-                <h3>Função da Reciclagem</h3>
-                <p>Reaproveitar materiais, estender sua vida útil e reduzir o volume de resíduos enviados a aterros e lixões, promovendo um meio ambiente mais sustentável.</p>
-            </article>
-
-            <article class="info-article">
-                <h3>Tipos de Reciclagem</h3>
-                <ul class="recycling-types">
-                    <li><strong>Mecânica:</strong> transformação física, como moagem e lavagem.</li>
-                    <li><strong>Química:</strong> alteração da estrutura química, como conversão de plásticos em monômeros.</li>
-                    <li><strong>Energética:</strong> queima controlada para geração de energia.</li>
-                </ul>
-            </article>
-
-            <article class="info-article">
-                <h3>Coleta Seletiva</h3>
-                <p>Separação do lixo por tipo e cor para que os materiais sejam reciclados corretamente. É o primeiro passo para um sistema eficiente.</p>
-            </article>
-
-            <article class="info-article">
-                <h3>Cores da Reciclagem no Brasil</h3>
-                <div class="table-container">
-                    <table class="recycling-colors-table">
-                        <thead>
-                            <tr>
-                                <th>Cor</th>
-                                <th>Material</th>
-                                <th>Recicláveis</th>
-                                <th>Não Recicláveis</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Verde</strong></td>
-                                <td>Vidro</td>
-                                <td>Garrafas, potes, frascos limpos</td>
-                                <td>Vidros temperados, espelhos, lâmpadas, louças</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Amarelo</strong></td>
-                                <td>Metal</td>
-                                <td>Latas, papel-alumínio limpo, tampas</td>
-                                <td>Latas de tinta, esponjas de aço, clipes</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Vermelho</strong></td>
-                                <td>Plástico</td>
-                                <td>Garrafas PET, embalagens, sacolas</td>
-                                <td>Isopor, espumas, acrílico, cabos de panela</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Azul</strong></td>
-                                <td>Papel</td>
-                                <td>Jornais, revistas, papelão limpo</td>
-                                <td>Papéis engordurados, guardanapos, fotos</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </article>
-
-            <article class="info-article">
-                <h3>Reciclagem no Brasil</h3>
-                <p>Atualmente, apenas 4% dos resíduos recicláveis são processados no Brasil. O Plano Nacional de Resíduos Sólidos (Planares) busca aumentar para 48% até 2040.</p>
-                <p class="source-text"><strong>Fonte:</strong> <a href="https://www.gov.br/mma/pt-br/assuntos/agendaambientalurbana/lixao-zero/plano_nacional_de_residuos_solidos-1.pdf" target="_blank" rel="noopener noreferrer">Planares, 2022</a></p>
-            </article>
-
-            <article class="info-article">
-                <h3>História da Reciclagem</h3>
-                <p>Desde a Grécia Antiga até a industrialização, a reciclagem sempre foi essencial para economia e meio ambiente. O símbolo universal foi criado por Gary Anderson.</p>
-                <p class="source-text"><strong>Fonte:</strong> <a href="https://www.hintonswaste.co.uk/news/history-of-recycling-timeline/" target="_blank" rel="noopener noreferrer">Hintons - História da Reciclagem</a></p>
-            </article>
-
-            <article class="info-article">
-                <h3>Como Reciclar Corretamente</h3>
-                <p>Separe plástico, vidro, papel, metal e orgânico. Evite papéis engordurados, guardanapos usados e bitucas de cigarro. Restos orgânicos podem ser compostados.</p>
-            </article>
-
-            <article class="info-article">
-                <h3>Fontes e Créditos</h3>
-                <ul class="source-list">
-                    <li><a href="https://brasilescola.uol.com.br/biologia/reciclagem.htm" target="_blank" rel="noopener noreferrer">Brasil Escola - Reciclagem</a></li>
-                    <li><a href="https://agenciabrasil.ebc.com.br/geral/noticia/2022-06/indice-de-reciclagem-no-brasil-e-de-4-diz-abrelpe" target="_blank" rel="noopener noreferrer">Agência Brasil - Abrelpe</a></li>
-                    <li><a href="https://www.gov.br/mma/pt-br/assuntos/agendaambientalurbana/lixao-zero/plano_nacional_de_residuos_solidos-1.pdf" target="_blank" rel="noopener noreferrer">Planares, 2022</a></li>
-                    <li><a href="https://www.uol.com.br/ecoa/colunas/mara-gama/2022/04/28/meta-de-reciclagem-e-incineracao-no-brasil.htm" target="_blank" rel="noopener noreferrer">Ecoa - Meta de Reciclagem</a></li>
-                </ul>
-            </article>
-        </section>
-
-        <!-- Equipe -->
-        <section id="equipe" aria-labelledby="h2-equipe" class="content-section">
-            <h2 id="h2-equipe">Nossa Equipe</h2>
-            <p>O EcoTech é desenvolvido com paixão e dedicação para o Desafio Liga Jovem, por estudantes do Colégio Técnico de Campinas - Unicamp, sob orientação da Profª Andréia Cristina de Souza.</p>
-            <ul class="team-list">
-                <li>Moisés Filipe - Desenvolvedor Full-Stack</li>
-                <li>Matheus da Silva Luciano - Desenvolvedor Full-Stack</li>
-            </ul>
-            <a href="[LINK_DO_SEU_PROJETO_NO_SITE_LIGA_JOVEM]" target="_blank" rel="noopener noreferrer" class="cta-button secondary-button">Conheça nosso projeto no Desafio Liga Jovem!</a>
-        </section>
-
-        <!-- Contato -->
-        <section id="contato" aria-labelledby="h2-contato" class="content-section">
-            <h2 id="h2-contato">Entre em Contato Conosco</h2>
-            <form id="form-contato" aria-label="Formulário de contato" novalidate>
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required autocomplete="name" />
-                    <span class="error-message" id="nome-error" aria-live="polite"></span>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required autocomplete="email" />
-                    <span class="error-message" id="email-error" aria-live="polite"></span>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                    <span class="error-message" id="mensagem-error" aria-live="polite"></span>
-                </div>
-                <button type="submit" class="cta-button primary-button">Enviar Mensagem</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 EcoTech. Todos os direitos reservados. <a href="#topo">Voltar ao topo</a></p>
-    </footer>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
